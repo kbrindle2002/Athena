@@ -1,1 +1,39 @@
-body{font-family:Arial, sans-serif;text-align:center;padding:50px;background:#f7f9fb;color:#001f54}
+/* simple, clean look */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f7f9fb;
+  color: #001f54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 12px;
+}
+
+.tagline {
+  font-size: 20px;
+  margin: 0 0 32px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #4db6ac;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.cta:hover {
+  background: #00796b;
+}
