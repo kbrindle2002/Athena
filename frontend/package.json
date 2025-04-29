@@ -1,0 +1,24 @@
+{
+  "name": "athena-frontend",
+  "private": true,
+  "version": "0.1.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0",
+    "typescript": "^5.5.0",
+    "tailwindcss": "^3.4.4",
+    "@tailwindcss/vite": "^4.1.4",
+    "@vitejs/plugin-react": "^4.2.0",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.17"
+  }
+}
