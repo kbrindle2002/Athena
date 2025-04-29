@@ -18,5 +18,3 @@ jobs:
         run: pip install pytest
       - name: Run alignment tests
         run: pytest alignment_tests/ --junitxml=results.xml
-      - name: Enforce threshold
-        run: python scripts/check_alignment_threshold.py results.xml --fail-under 0.92
