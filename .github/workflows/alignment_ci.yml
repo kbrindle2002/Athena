@@ -1,6 +1,10 @@
 name: alignment
 
-on: [pull_request]
+on:
+  push:
+    branches: [ main ]     # run on every push to main
+  pull_request:            # still run on PRs
+
 
 jobs:
   safety:
