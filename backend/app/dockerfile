@@ -1,0 +1,17 @@
+# ── Python slim image ──────────────────────────────────────────────
+FROM python:3.10-slim
+
+# create non-root user (optional good practice)
+RUN adduser --disabled-password --home /nonroot nonroot
+WORKDIR /app
+USER nonroot
+
+# ── install deps ───────────────────────────────────────────────────
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ── copy code ──────────────────────────────────────────────────────
+COPY app/ ./app/
+
+# ── serve FastAPI with hot-reload in dev ───────────────────────────
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
