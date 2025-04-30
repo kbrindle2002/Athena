@@ -3,15 +3,18 @@ services:
     build: ./backend
     environment:
       DATABASE_URL: postgresql+psycopg2://athena:athena@db:5432/athena
-    depends_on: [db]
-    volumes: [./backend:/app]
+    volumes: ["./backend:/app"]
     ports: ["8000:8000"]
+    depends_on: [db]
 
-  frontend:
-    working_dir: /app
+  frontend:                      #  ← ADD THIS SERVICE
     image: node:20-alpine
-    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
-    volumes: [./frontend:/app]
+    working_dir: /app
+    command: |
+      sh -c "npm install \
+             && rm -rf node_modules/.vite \
+             && npm run dev -- --host 0.0.0.0"
+    volumes: ["./frontend:/app"]
     ports: ["5173:5173"]
 
   db:
